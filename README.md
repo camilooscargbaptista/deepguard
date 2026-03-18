@@ -168,10 +168,40 @@ deepguard compare original.jpg edited.jpg --output comparison.html
 - **SUSPICIOUS (Yellow)** - Some anomalies detected, but not conclusive
 - **MANIPULATED (Red)** - Strong evidence of editing or deepfake artifacts
 
-The confidence score (0-100%) reflects how certain the system is in its verdict.
+The manipulation score (0-100%) reflects how likely the image has been tampered with.
+
+## Roadmap
+
+| Version | Feature | Status |
+|---------|---------|--------|
+| v1.0 | ELA, Noise, Metadata, Copy-Move, Face Check | ✅ Released |
+| v1.1 | Frequency Spectrum Analysis (FFT) | 🔜 Planned |
+| v1.1 | JPEG Ghost Detection | 🔜 Planned |
+| v2.0 | AI-Generated Image Detection (Neural) | 📋 Roadmap |
+| v2.0 | GAN Fingerprint Analysis | 📋 Roadmap |
+| v2.1 | PyPI Publishing | 📋 Roadmap |
+| v2.1 | Docker Image | 📋 Roadmap |
+
+> **Note:** Current v1.0 techniques are optimized for detecting traditional image editing (Photoshop, splicing, copy-paste). AI-generated image detection requires neural network-based analysis, planned for v2.0.
+
+## Architecture Governance
+
+This project uses [@girardelli/architect](https://github.com/camilooscargbaptista/architect) for continuous architecture analysis:
+
+```bash
+# Full architecture report
+make architect
+
+# Quick score check
+make architect-score
+
+# List anti-patterns
+make architect-anti-patterns
+```
 
 ## Limitations
 
+- **AI-generated images**: Current techniques may not fully detect AI-generated content (planned for v2.0)
 - Cannot recover original image content or identify specific edits
 - Face analysis works best with forward-facing, well-lit faces
 - PDF analysis limited to first page
