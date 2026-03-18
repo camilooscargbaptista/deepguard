@@ -1,0 +1,14 @@
+{
+  "name": "deepguard",
+  "description": "Offline image forensics and deepfake detection CLI",
+  "language": "python",
+  "src": "./src",
+  "exclude": [
+    ".venv",
+    "__pycache__",
+    "*.egg-info",
+    "dist",
+    "build",
+    ".git"
+  ]
+}
